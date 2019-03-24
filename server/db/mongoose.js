@@ -8,5 +8,3 @@ mongoose.connect(mongoURI, {useNewUrlParser: true}).then(function(){
     //err handle
     console.log(err)
 });
-//connect to mongodatabase
-//mongoose.connect('mongodb://localhost:27017/TodoApp', {useNewUrlParser: true}, err => console.log(err));

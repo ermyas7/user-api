@@ -103,7 +103,7 @@ UserSchema.statics.findByCredentials = function(email, password){
     var User = this;
     return User.findOne({email}).then((user) => {
       if(!user){
-        return Promise.reject()
+        return new Promise( (resolve, reject) => reject('Invalid email or password')) 
       }
 
       return new Promise((resolve, reject) => {
@@ -113,12 +113,12 @@ UserSchema.statics.findByCredentials = function(email, password){
             resolve(user)
           }
           else{
-            reject()
+            reject('Invalid email or password')
           }
         } )
       })
     }).
-    catch((err) => Promise.reject())
+    catch((err) => new Promise((resolve, reject) => reject('Invalid email or password')))
 }
 
 //hash password
