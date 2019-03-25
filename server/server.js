@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 
 const {seedMovie} = require('./seed');
 
-seedMovie();
+//seedMovie();
 
 const app = express();
 
