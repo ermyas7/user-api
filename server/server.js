@@ -28,10 +28,10 @@ app.post('/users', (req, res) => {
     return user.generateAuthToken();
   })
   .then((token) => {
-    res.header('x-auth',token).send(user)
+    res.header('x-auth',token).send({user})
   })
   .catch(err => {
-    res.status(400).send(err.message)
+    res.status(400).send({error: err.message})
   })
 })
 
@@ -49,11 +49,11 @@ app.post('/users', (req, res) => {
     .then(user => {
        return user.generateAuthToken()
        .then((token) => {
-         res.header('x-auth',token).send(user)
+         res.header('x-auth',token).send({user})
        })
     })
     .catch(err => {
-      res.status(400).send(err)
+      res.status(400).send({error: err})
     })
   })
 
