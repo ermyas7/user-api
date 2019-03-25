@@ -1,7 +1,6 @@
 require('./config/config')
 const _ = require('lodash')
 const mongoose = require('./db/mongoose')
-const {ObjectID} = require('mongodb')
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -12,7 +11,7 @@ const PORT = process.env.PORT;
 
 const {seedMovie} = require('./seed');
 
-//seedMovie();
+seedMovie();
 
 const app = express();
 
