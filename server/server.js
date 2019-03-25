@@ -70,4 +70,7 @@ app.post('/users', (req, res) => {
     })
   })
 
+  const data = require('./movies.json');
+  console.log(data)
+
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
