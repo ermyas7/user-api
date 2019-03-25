@@ -29,24 +29,10 @@
 	},
 	{
 	"Title": "Aquaman",
-	"Year": "1968–",
+	"Year": "1968",
 	"imdbID": "tt0433278",
 	"Type": "series",
 	"Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNjUxM2RkZTgtOGM3My00MDZlLWJhNzYtY2QzZTc5NjdiNjczXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
-	},
-	{
-	"Title": "Aquaman: Battle for Atlantis",
-	"Year": "2003",
-	"imdbID": "tt0405700",
-	"Type": "game",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Aquaman",
-	"Year": "1984",
-	"imdbID": "tt0179647",
-	"Type": "movie",
-	"Poster": "N/A"
 	},
 	{
 	"Title": "Aquaman: A Fish Story",
@@ -56,15 +42,8 @@
 	"Poster": "https://m.media-amazon.com/images/M/MV5BNTMwMjAxMDA4M15BMl5BanBnXkFtZTgwMDcwMTkyMTE@._V1_SX300.jpg"
 	},
 	{
-	"Title": "Aquaman Fan Film",
-	"Year": "2008",
-	"imdbID": "tt1291050",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
 	"Title": "Aquaman: The Teen Drama",
-	"Year": "2013–",
+	"Year": "2013",
 	"imdbID": "tt4018616",
 	"Type": "series",
 	"Poster": "https://m.media-amazon.com/images/M/MV5BMTE2M2Y4MDMtMGUwOC00NTNjLTk1MmYtODQwN2JkMjFhNTRhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTM1ODU1NzM@._V1_SX300.jpg"
@@ -127,14 +106,7 @@
 	},
 	{
 	"Title": "Avengers Assemble",
-	"Year": "2013–",
-	"imdbID": "tt2455546",
-	"Type": "series",
-	"Poster": "https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg"
-	},
-	{
-	"Title": "Avengers Assemble",
-	"Year": "2013–",
+	"Year": "2013",
 	"imdbID": "tt2455546",
 	"Type": "series",
 	"Poster": "https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg"
@@ -154,60 +126,11 @@
 	"Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQ4MzcxNDU3N15BMl5BanBnXkFtZTgwOTE1MzMxNzE@._V1_SX300.jpg"
 	},
 	{
-	"Title": "Spiderman",
-	"Year": "1990",
-	"imdbID": "tt0100669",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Spiderman",
-	"Year": "2010",
-	"imdbID": "tt1785572",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Fighting, Flying and Driving: The Stunts of Spiderman 3",
-	"Year": "2007",
-	"imdbID": "tt1132238",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
 	"Title": "Spiderman and Grandma",
 	"Year": "2009",
 	"imdbID": "tt1433184",
 	"Type": "movie",
 	"Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3Mzg0MjAxMl5BMl5BanBnXkFtZTcwNjIyODg5Mg@@._V1_SX300.jpg"
-	},
-	{
-	"Title": "The Amazing Spiderman T4 Premiere Special",
-	"Year": "2012",
-	"imdbID": "tt2233044",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Amazing Spiderman Syndrome",
-	"Year": "2012",
-	"imdbID": "tt2586634",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Hollywood's Master Storytellers: Spiderman Live",
-	"Year": "2006",
-	"imdbID": "tt2158533",
-	"Type": "movie",
-	"Poster": "N/A"
-	},
-	{
-	"Title": "Spiderman 5",
-	"Year": "2008",
-	"imdbID": "tt3696826",
-	"Type": "movie",
-	"Poster": "N/A"
 	},
 	{
 	"Title": "Crazy, Stupid, Love.",

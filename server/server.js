@@ -6,6 +6,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 var {User}   = require('./models/user');
+var {Movie} = require('./models/movie');
 var {authenticate} = require('./middleware/authenticate');
 const PORT = process.env.PORT;
 
@@ -69,8 +70,5 @@ app.post('/users', (req, res) => {
       res.status(400).send()
     })
   })
-
-  const data = require('./movies.json');
-  console.log(data)
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
