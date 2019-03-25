@@ -97,4 +97,19 @@ app.post('/users', (req, res) => {
   	})
   });
 
+
+  ////////////////////////////////
+  ///////// get one movie ////////
+  //////////////////////////////
+  app.get('/movies/:id', (req, res) => {
+  	let id = req.params.id;
+  	Movie.findById(id)
+  	.then(movie => {
+  		res.status(200).send(movie)
+  	})
+  	.catch(err => {
+  		res.status(400).send(err)
+  	})
+  });
+
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
