@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const _ = require('lodash');
+
 var MovieSchema = mongoose.Schema(
   {
     Title: String,
@@ -7,6 +9,15 @@ var MovieSchema = mongoose.Schema(
     Poster: String
     }
     );
+
+
+
+MovieSchema.methods.toJSON = function(){
+  var movie = this;
+  var movieObject = movie.toObject();
+  return _.pick(movieObject, ['_id', 'Title', 'Year', 'Poster', 'Type'])
+
+}
 
 const Movie = mongoose.model('Movie', MovieSchema);
 
