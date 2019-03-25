@@ -10,6 +10,10 @@ var {Movie} = require('./models/movie');
 var {authenticate} = require('./middleware/authenticate');
 const PORT = process.env.PORT;
 
+const {seedMovie} = require('./seed');
+
+//seedMovie();
+
 const app = express();
 
 app.use(bodyParser.json());
