@@ -1,8 +1,11 @@
 require('./config/config')
-const _ = require('lodash')
-const mongoose = require('./db/mongoose')
-const express = require('express')
+const _ 		 = require('lodash')
+const mongoose   = require('./db/mongoose')
+const express    = require('express')
 const bodyParser = require('body-parser')
+const cloudinary = require('cloudinary').v2
+const multer     = require('multer')
+
 
 var {User}   = require('./models/user');
 var {Movie} = require('./models/movie');
@@ -110,5 +113,53 @@ app.post('/users', (req, res) => {
   		res.status(400).send(err)
   	})
   });
+
+
+
+
+  ///////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+  ///////cloudinary configuration ///////////////////
+
+  var storage = multer.diskStorage({
+  	filename: function(req, file, callback) {
+    	callback(null, Date.now() + file.originalname);
+  	}
+});
+
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+
+cloudinary.config({ 
+  cloud_name: 'djinwsqhr', 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+
+app.post('/movies', upload.single('image'), (req, res) => {
+	
+	cloudinary.uploader.upload(req.file.path, function(err, result) {
+	if(err){
+		console.log(err)
+	}	
+  	const Poster = result.secure_url;
+  	let body = _.pick(req.body, ['Title', 'Year', 'Type']);
+  	body = {...body, Poster}
+
+	Movie.create(body)
+	.then(movie => res.send(movie))
+	.catch(err => res.send(err))
+  
+	});
+})
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
