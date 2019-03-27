@@ -144,21 +144,23 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-
 app.post('/movies', upload.single('image'), (req, res) => {
-	
-	cloudinary.uploader.upload(req.file.path, function(err, result) {
-	if(err){
-		console.log(err)
-	}	
+	//upload file to cloudinary server
+	cloudinary.uploader.upload(req.file.path, (err, result) => {
+ 	if(err){
+	 		console.log(err)
+ 	}	
+  	// Grab image url
   	const Poster = result.secure_url;
+  	
+  	//movie list object
   	let body = _.pick(req.body, ['Title', 'Year', 'Type']);
-  	body = {...body, Poster}
-
-	Movie.create(body)
-	.then(movie => res.send.status(200).(movie))
-	.catch(err => res.send.status(400).(err))
-  
+  		body = {...body, Poster};
+  		
+  	//add movie list object to BD
+  	Movie.create(body)
+  	.then(movie => res.status(200).send(movie))
+  	.catch(err => res.status(400).send(err))
 	});
 })
 
