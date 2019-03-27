@@ -156,8 +156,8 @@ app.post('/movies', upload.single('image'), (req, res) => {
   	body = {...body, Poster}
 
 	Movie.create(body)
-	.then(movie => res.send(movie))
-	.catch(err => res.send(err))
+	.then(movie => res.send.status(200).(movie))
+	.catch(err => res.send.status(400).(err))
   
 	});
 })
