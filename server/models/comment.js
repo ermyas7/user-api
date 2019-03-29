@@ -1,16 +1,23 @@
 const mongoose = require("mongoose");
+const User = require('./user');
 const commentSchema = mongoose.Schema({
     text: String,
-    author: {
+    postedBy: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-        },
-        username: String
-    },
-    likedBy: {
-        type: mongoose.Schema.Types.ObjectId
         }
+    },
+    likedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"}
+    ],
+    reply: [{
+            id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        text: String}]    
 });
 
 module.exports = mongoose.model("Comment", commentSchema);
