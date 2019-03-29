@@ -1,4 +1,5 @@
 const express = require('express');
+const _ = require('lodash');
 
 const {
     User
@@ -6,7 +7,7 @@ const {
 const {
     authenticate
 } = require('../middleware/authenticate');
-const _ = require('lodash');
+
 
 const router = express.Router({
     mergeParams: true
