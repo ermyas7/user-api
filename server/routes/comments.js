@@ -44,8 +44,8 @@ router.get('/movies/:id/comments', (req, res) => {
 }) 
 
 
-//like a momment
-router.post('/movies/:id/comments/:comId/like', (req, res) => {
+//like a comment
+router.post('/movies/:id/comments/:comId/likes', (req, res) => {
     let id = req.params.id;
     let comId = req.params.comId;
     let likedBy = req.body.liked;
@@ -64,5 +64,14 @@ router.post('/movies/:id/comments/:comId/like', (req, res) => {
     })
     .catch(err => res.send(err))
     })
-    
+
+//get likes
+router.get('/movies/:id/comments/:comId/likes', (req, res) => {
+    let comId = req.params.comId;
+    Comment.findById(comId)
+    .then(comment => {
+        res.send(comment.likes)
+    })
+    .catch(err => res.send(err))
+})
 module.exports = router;
