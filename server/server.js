@@ -135,7 +135,7 @@ var imageFilter = function (req, file, cb) {
     cb(null, true);
 };
 
-var upload = multer({ storage: storage, fileFilter: imageFilter})
+var upload = multer({ storage: storage, fileFilter: imageFilter, limits:{fileSize: 1000000}})
 
 
 cloudinary.config({ 
@@ -148,7 +148,8 @@ app.post('/movies', upload.single('image'), (req, res) => {
 	//upload file to cloudinary server
 	cloudinary.uploader.upload(req.file.path, (err, result) => {
  	if(err){
-	 		console.log(err)
+	 		console.log("error from cloudinary")
+
  	}	
   	// Grab image url
   	const Poster = result.secure_url;
@@ -160,7 +161,9 @@ app.post('/movies', upload.single('image'), (req, res) => {
   	//add movie list object to BD
   	Movie.create(body)
   	.then(movie => res.status(200).send(movie))
-  	.catch(err => res.status(400).send(err))
+  	.catch(err => {
+  		console.log("error from movie"); 
+  		res.status(400).send(err)});
 	});
 })
 
