@@ -1,5 +1,6 @@
 const express = require('express');
 const _ = require('lodash');
+const {ObjectID} = require('mongodb');
 const {
     Comment
 } = require('../models/comment');
@@ -43,4 +44,25 @@ router.get('/movies/:id/comments', (req, res) => {
 }) 
 
 
+//like a momment
+router.post('/movies/:id/comments/:comId/like', (req, res) => {
+    let id = req.params.id;
+    let comId = req.params.comId;
+    let likedBy = req.body.liked;
+    Comment.findById(comId)
+    .then(comment => {
+        comment.likes.push(likedBy);
+        return comment.save()
+    })
+    .then(comment => {
+        Movie.findById(id)
+        .then(movie => {
+            movie.comments.push(comment)
+           return movie.save()
+        }) 
+        .then(movie => res.send(comment))       
+    })
+    .catch(err => res.send(err))
+    })
+    
 module.exports = router;

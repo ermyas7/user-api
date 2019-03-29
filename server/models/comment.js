@@ -5,7 +5,8 @@ const commentSchema = mongoose.Schema({
     postedBy: String,
     likes: [
         {
-            type: mongoose.Schema.Types.ObjectId
+            type: mongoose.Schema.Types.ObjectId,
+            unique: true
         }
     ]
 });
