@@ -29,6 +29,18 @@ router.post('/movies/:id/comments', (req, res) => {
     .catch(err => res.send(err)) 
 });
    
+//get comments for the list
+router.get('/movies/:id/comments', (req, res) => {
+    let id = req.params.id;
+    Movie.findById(id)
+         .populate('comments')
+         .exec((err, movie) => {
+             if(err){
+                 res.send(err)
+             }
+             res.send(movie.comments)
+         })   
+}) 
 
 
 module.exports = router;
