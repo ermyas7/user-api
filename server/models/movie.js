@@ -17,8 +17,7 @@ var MovieSchema = mongoose.Schema(
     ],
     likes: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.Types.ObjectId
       }
     ]
   }

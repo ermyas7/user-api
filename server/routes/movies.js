@@ -17,10 +17,6 @@ const router = express.Router({
 /////////////////////////////////////
 router.get('/movies', (req, res) => {
     Movie.find({})
-        .populate('likes')
-        .populate('comments')
-        .populate('comments.likedBy')
-        .populate('comments.reply')
         .exec((err, movies) => {
             if(err){
                 res.status(400).send(err);
@@ -36,10 +32,7 @@ router.get('/movies', (req, res) => {
 router.get('/movies/:id', (req, res) => {
     let id = req.params.id;
     Movie.findById(id)
-        .populate('likes')
         .populate('comments')
-        .populate('comments.likedBy')
-        .populate('comments.reply')
         .exec((err, movies) => {
             if(err){
                 res.status(400).send(err);
