@@ -16,7 +16,7 @@ const {
   seedMovie
 } = require('./seed');
 
-//seedMovie();
+seedMovie();
 const app = express();
 app.use(bodyParser.json());
 
