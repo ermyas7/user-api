@@ -53,18 +53,9 @@ router.post('/movies/:id/comments/:comId/likes', (req, res) => {
     .then(comment => {
         comment.likes.push(likedBy);
         return comment.save()
-    })
-    .then(comment => {
-        Movie.findById(id)
-        .then(movie => {
-            movie.comments.push(comment)
-           return movie.save()
-        }) 
-        .then(movie => res.send(comment))       
-    })
+    })       
     .catch(err => res.send(err))
     })
-
 //get likes
 router.get('/movies/:id/comments/:comId/likes', (req, res) => {
     let comId = req.params.comId;
