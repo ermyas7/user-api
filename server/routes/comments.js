@@ -43,6 +43,14 @@ router.get('/movies/:id/comments', (req, res) => {
          })   
 }) 
 
+//get a single comment
+router.get('/movies/:id/comments/:comId', (req, res) => {
+    let comId = req.params.comId
+    Comment.findById(comId)
+    .then(comment => res.send(comment))
+    .catch(err => res.send(err))   
+})
+
 
 //add like 
 router.post('/movies/:id/comments/:comId/likes', (req, res) => {
